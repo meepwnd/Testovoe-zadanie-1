@@ -1,10 +1,9 @@
 import React from "react";
 
-class Profile extends React.Component {
-  state = {};
-  render() {
-    return <p>profile</p>;
-  }
-}
+const Profile = () => (
+  <div>
+    <p>Your profile</p>
+  </div>
+);
 
 export default Profile;
