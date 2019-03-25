@@ -7,14 +7,24 @@ import LoginPage from "./LoginPage";
 import Profile from "./Profile";
 import NotFoundPage from "./NotFoundPage";
 import AuthButton from "./AuthButton";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const App = () => (
   <BrowserRouter>
-    <div>
+    <div className="container">
       <header>
-        <Link to="/">Home</Link>
-        <Link to="/news">News</Link>
-        <Link to="/profile">Profile</Link>
+        <ul className="nav justify-content-center">
+          <li className="nav-link">
+            <Link to="/">Home</Link>
+          </li>
+          <li className="nav-link">
+            <Link to="/news">News</Link>
+          </li>
+          <li className="nav-link">
+            <Link to="/profile">Profile</Link>
+          </li>
+        </ul>
+
         <AuthButton />
       </header>
 

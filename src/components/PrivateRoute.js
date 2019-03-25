@@ -2,9 +2,8 @@ import React from "react";
 import { Route, Redirect } from "react-router-dom";
 
 const PrivateRoute = props => {
-  const isAuth = localStorage.getItem("isAutentificated");
-  const isAuthBool = JSON.parse(isAuth);
-  return isAuthBool ? (
+  const isAuth = JSON.parse(localStorage.getItem("isAutentificated"));
+  return isAuth ? (
     <Route {...props} />
   ) : (
     <Redirect

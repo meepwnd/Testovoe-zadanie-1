@@ -2,12 +2,12 @@ import React from "react";
 import { withRouter } from "react-router-dom";
 
 const AuthButton = withRouter(props => {
-  const isAuth = localStorage.getItem("isAutentificated");
-  const isAuthBool = JSON.parse(isAuth);
-  return isAuthBool ? (
-    <p>
+  const isAuth = JSON.parse(localStorage.getItem("isAutentificated"));
+  return isAuth ? (
+    <p className="text-right">
       Hello!{" "}
       <button
+        className="btn btn-dark"
         onClick={() => {
           localStorage.setItem("isAutentificated", false);
           props.history.push("/");
@@ -17,7 +17,7 @@ const AuthButton = withRouter(props => {
       </button>
     </p>
   ) : (
-    <p>Please log in to view private information</p>
+    <p className="text-right">Please log in to view private information</p>
   );
 });
 
