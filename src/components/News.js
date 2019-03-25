@@ -29,7 +29,8 @@ const mapStateToProps = state => ({
 
 News.propTypes = {
   posts: PropTypes.array.isRequired,
-  dispatch: PropTypes.func.isRequired
+  dispatch: PropTypes.func.isRequired,
+  isFetching: PropTypes.bool.isRequired
 };
 
 export default connect(mapStateToProps)(News);
