@@ -7,7 +7,9 @@ const News = props => {
   useEffect(() => {
     props.dispatch(fetchPosts());
   }, []);
-  return (
+  return props.isFetching ? (
+    <p>loadiing...</p>
+  ) : (
     <>
       <h1>News</h1>
       {props.posts.slice(0, 10).map(post => (
@@ -21,7 +23,8 @@ const News = props => {
 };
 
 const mapStateToProps = state => ({
-  posts: state.posts
+  posts: state.posts,
+  isFetching: state.isFetching
 });
 
 News.propTypes = {
