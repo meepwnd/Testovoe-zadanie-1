@@ -4,9 +4,10 @@ import { fetchPosts } from "../actions/actions";
 import { connect } from "react-redux";
 
 const News = props => {
+  const {dispatch} = props;
   useEffect(() => {
-    props.dispatch(fetchPosts());
-  }, []);
+    dispatch(fetchPosts());
+  }, [dispatch]);
   return props.isFetching ? (
     <p>loadiing...</p>
   ) : (
